@@ -9,7 +9,12 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	// Validate license key for product
-	err := validator.ValidateLicenseForProduct("PRODUCT-DEV-SKU")
+	// err := validator.ValidateLicenseForProduct("PRODUCT-DEV-SKU")
+	// Using options to make it work with pre prod environment
+	err := validator.ValidateLicenseWithOptions(validator.ValidationOptions{
+		SKU:               "PRODUCT-DEV-SKU",
+		CertificateDomain: "licensing.omnistrate.dev",
+	})
 	if err != nil {
 		// Print error information in html format
 		fmt.Fprintf(w, "<h1>Error</h1><p>%s</p>", err.Error())
