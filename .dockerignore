@@ -4,15 +4,11 @@
 .terraform.lock.hcl
 .DS_Store
 
+#github
+.github
+
 # Binaries
 licensing-example-go
-
-# Vendor dependencies
-vendor/
-
-# Go modules
-go.mod
-go.sum
 
 # IDE/editor config files
 .vscode/
