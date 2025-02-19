@@ -9,8 +9,11 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	// Validate license key for product
+
+	// This is the validation method that can be used to validate license key for a product in Omnistrate
 	// err := validator.ValidateLicenseForProduct("PRODUCT-DEV-SKU")
-	// Using options to make it work with pre prod environment
+
+	// Using options to make it work with Omnistrate pre prod environment
 	err := validator.ValidateLicenseWithOptions(validator.ValidationOptions{
 		SKU:               "PRODUCT-DEV-SKU",
 		CertificateDomain: "licensing.omnistrate.dev",
