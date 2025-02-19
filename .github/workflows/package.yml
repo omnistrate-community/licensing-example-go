@@ -5,12 +5,12 @@ on:
     paths:
       - build/Dockerfile
     branches: 
-    - master
+    - main
   pull_request:
     paths:
       - build/Dockerfile
     branches: 
-    - master
+    - main
   release:
     types: [ "published" ]
 
