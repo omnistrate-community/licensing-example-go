@@ -1,0 +1,7 @@
+# Ignored files
+.env
+.omnistrate.password
+.terraform
+.terraform.lock.hcl
+.DS_Store
+licensing-example-go

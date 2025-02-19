@@ -1,0 +1,24 @@
+.env
+.omnistrate.password
+.terraform
+.terraform.lock.hcl
+.DS_Store
+
+# Binaries
+licensing-example-go
+
+# Vendor dependencies
+vendor/
+
+# Go modules
+go.mod
+go.sum
+
+# IDE/editor config files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+
+
