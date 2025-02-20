@@ -6,10 +6,10 @@ x-customer-integrations:
   
 services:
   web:
-    image: ghcr.io/omnistrate-community/licensing-example-go:0.0.5
+    image: ghcr.io/omnistrate-community/licensing-example-go:0.0.6
     ports:
-      - '80:8080'
-      - '443:8443'
+      - '80:80'
+      - '443:443'
     environment:
       - SECURITY_CONTEXT_USER_ID=2000
       - SECURITY_CONTEXT_GROUP_ID=1000
