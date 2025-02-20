@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/omnistrate-oss/omnistrate-licensing-sdk-go/pkg/validator"
 )
@@ -31,22 +30,22 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	certFile := "/etc/tls/tls.crt"
-	keyFile := "/etc/tls/tls.key"
+	// certFile := "/etc/tls/tls.crt"
+	// keyFile := "/etc/tls/tls.key"
 
-	// check if the certificate and key files exist
-	if _, err := os.Stat(certFile); os.IsNotExist(err) {
-		log.Printf("Starting server on :443 with TLS...")
-		err := http.ListenAndServeTLS(":443", certFile, keyFile, nil)
-		if err != nil {
-			log.Fatalf("Server failed to start: %v", err)
-		}
-	} else {
-		// start server without TLS
-		log.Printf("Starting server on :80 without TLS...")
-		err := http.ListenAndServe(":80", nil)
-		if err != nil {
-			log.Fatalf("Server failed to start: %v", err)
-		}
+	// // check if the certificate and key files exist
+	// if _, err := os.Stat(certFile); os.IsNotExist(err) {
+	// 	log.Printf("Starting server on :443 with TLS...")
+	// 	err := http.ListenAndServeTLS(":443", certFile, keyFile, nil)
+	// 	if err != nil {
+	// 		log.Fatalf("Server failed to start: %v", err)
+	// 	}
+	// } else {
+	// start server without TLS
+	log.Printf("Starting server on :80 without TLS...")
+	err := http.ListenAndServe(":80", nil)
+	if err != nil {
+		log.Fatalf("Server failed to start: %v", err)
 	}
+	// }
 }
