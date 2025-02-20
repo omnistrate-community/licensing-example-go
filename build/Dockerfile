@@ -25,6 +25,7 @@ RUN apk update
 COPY --from=builder /go/bin/licensing-example-go /bin/licensing-example-go
 
 EXPOSE 8080
+EXPOSE 8443
 
 # Create a group (2000) and user (1000)
 RUN addgroup -S servicegroup -g 2000 && adduser -S serviceuser -G servicegroup -u 1000
