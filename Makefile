@@ -54,8 +54,8 @@ login:
 
 .PHONY: release
 release:
-	omnistrate-ctl build -f compose.yaml --name licensing-compose --release-as-preferred
+	omnistrate-ctl build -f compose.yaml --name licensing-example --release-as-preferred
 
 .PHONY: create
 create:
-	omnistrate-ctl instance create --environment Dev --cloud-provider aws --region ap-south-1 --plan licensing-compose --service licensing-compose --resource postgres 
+	omnistrate-ctl instance create --environment Dev --cloud-provider aws --region ap-south-1 --plan licensing-example --service licensing-example --resource web 
