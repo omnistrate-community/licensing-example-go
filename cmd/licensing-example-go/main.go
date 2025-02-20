@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/omnistrate-oss/omnistrate-licensing-sdk-go/pkg/validator"
 )
@@ -29,5 +31,22 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":8080", nil)
+	certFile := "/etc/tls/tls.crt"
+	keyFile := "/etc/tls/tls.key"
+
+	// check if the certificate and key files exist
+	if _, err := os.Stat(certFile); os.IsNotExist(err) {
+		log.Printf("Starting server on :8443 with TLS...")
+		err := http.ListenAndServeTLS(":8443", certFile, keyFile, nil)
+		if err != nil {
+			log.Fatalf("Server failed to start: %v", err)
+		}
+	} else {
+		// start server without TLS
+		log.Printf("Starting server on :8080 without TLS...")
+		err := http.ListenAndServe(":8080", nil)
+		if err != nil {
+			log.Fatalf("Server failed to start: %v", err)
+		}
+	}
 }

@@ -5,44 +5,11 @@ x-customer-integrations:
     productTierSku: 'PRODUCT-DEV-SKU'
   
 services:
-  Postgres:
-    image: postgres
+  web:
+    image: ghcr.io/omnistrate-community/licensing-example-go:0.0.5
     ports:
-      - '5432:5432'
-    x-omnistrate-api-params:
-      - key: password
-        description: Postgres user password
-        name: Password
-        type: Password
-        modifiable: true
-        required: true
-        export: false
-        defaultValue: a_secure_password
-      - key: username
-        description: Postgres user name
-        name: Username
-        type: String
-        modifiable: true
-        required: true
-        export: true
-        defaultValue: username
+      - '80:8080'
+      - '443:8443'
     environment:
-      - SECURITY_CONTEXT_USER_ID=999
-      - SECURITY_CONTEXT_GROUP_ID=999
-      - POSTGRES_USER=$var.username
-      - POSTGRES_PASSWORD=$var.password
-      - PGDATA=/var/lib/postgresql/data/dbdata
-    volumes:
-      - source: ./data
-        target: /var/lib/postgresql/data
-        type: bind
-        x-omnistrate-storage:
-          aws:
-            instanceStorageType: AWS::EBS_GP3
-            instanceStorageSizeGi: 10
-            instanceStorageIOPS: 3000
-            instanceStorageThroughputMiBps: 125
-          gcp:
-            instanceStorageType: GCP::PD_BALANCED
-            instanceStorageSizeGi: 10
-
+      - SECURITY_CONTEXT_USER_ID=2000
+      - SECURITY_CONTEXT_GROUP_ID=1000
