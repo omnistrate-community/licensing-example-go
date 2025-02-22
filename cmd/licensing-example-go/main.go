@@ -13,6 +13,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// Validate license key for product
 
 	// This is the validation method that can be used to validate license key for a product in Omnistrate
+	// With a simple call to this method, you can:
+	// - confirm the validity of the certificate that signed the license
+	// - validate the license signature
+	// - validate the license expiration date
+	// - validate the unique sku configured in omnistrate maps with the product
+	// - validate that the injected variable containing the instance-id maps with the license
 	err := validator.ValidateLicenseForProduct("PRODUCT-SAMPLE-SKU-UNIQUE-VALUE")
 	if err != nil {
 		// Print error information in html format
