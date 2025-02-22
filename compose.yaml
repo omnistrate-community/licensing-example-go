@@ -2,11 +2,11 @@ version: '3.9'
 x-customer-integrations:
   licensing: 
     licenseExpirationInDays: 7
-    productTierSku: 'PRODUCT-DEV-SKU'
+    productTierSku: 'PRODUCT-SAMPLE-SKU-UNIQUE-VALUE'
   
 services:
   web:
-    image: ghcr.io/omnistrate-community/licensing-example-go:0.0.8
+    image: ghcr.io/omnistrate-community/licensing-example-go:0.1.0
     ports:
       - '8080:8080'
       - '8443:8443'
