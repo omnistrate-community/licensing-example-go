@@ -35,7 +35,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	// start server without TLS
 	log.Printf("Starting server on :8080 without TLS...")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
