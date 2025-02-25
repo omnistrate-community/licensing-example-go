@@ -17,7 +17,7 @@ This is the validation method that can be used to validate a license key for a p
 - confirm the validity of the certificate that signed the license
 - validate the license signature
 - validate the license expiration date
-- validate the unique SKU configured in Omnistrate maps with the product
+- validate the unique Product Plan ID configured in Omnistrate maps with the product
 - validate that the injected variable containing the instance-id maps with the license
 
 > **Note:** The SDK logic assumes that the license file is mounted in the following folder: `/var/subscription/`. When using Omnistrate there is no need to add any additional configuration to manage certificate rotation, suspension or renewal of the license is automated in a simple way. You can explore the implementation of the [Open Source SDK](https://github.com/omnistrate-oss/omnistrate-licensing-sdk-go).
