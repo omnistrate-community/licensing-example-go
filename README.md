@@ -1,4 +1,4 @@
-# Omnistrate Licensing SDK for Go
+# Usage Example of Omnistrate Licensing SDK for Go 
 
 ![Build](https://github.com/omnistrate-community/licensing-example-go/actions/workflows/build.yml/badge.svg) 
 ![Package](https://github.com/omnistrate-community/licensing-example-go/actions/workflows/package.yml/badge.svg) 
