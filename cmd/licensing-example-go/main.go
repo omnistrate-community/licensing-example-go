@@ -12,7 +12,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// Validate license key for product
 
 	// Unique ID provided by Omnistrate for your organization
-	orgID := "org-4xihABXKyq"
+	orgID := "org-p4ttliuEeF"
 	// Unique Product ID provided that can be configured in Omnistrate, by default it is the Product Plan ID
 	productUniqueID := "PRODUCT-SAMPLE-SKU-UNIQUE-VALUE"
 
@@ -23,7 +23,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// - validate the license expiration date
 	// - validate the unique product id configured in omnistrate maps with the product your organization
 	// - validate that the injected variable containing the instance-id maps with the license
-	err := validator.ValidateLicense(orgID, productUniqueID)
+	err := validator.ValidateLicenseWithOptions(validator.ValidationOptions{
+		OrganizationID:      orgID,
+		ProductPlanUniqueID: productUniqueID,
+		CertificateDomain:   "licensing.omnistrate.dev", // Only used for testing purposed
+	})
 	if err != nil {
 		// Print error information in html format
 		fmt.Fprintf(w, "<h1>Error</h1><p>%s</p>", err.Error())
