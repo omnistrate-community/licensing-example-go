@@ -16,9 +16,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// - confirm the validity of the certificate that signed the license
 	// - validate the license signature
 	// - validate the license expiration date
-	// - validate the unique sku configured in omnistrate maps with the product
+	// - validate the unique product id configured in omnistrate maps with the product your organization
 	// - validate that the injected variable containing the instance-id maps with the license
-	err := validator.ValidateLicenseForProduct("PRODUCT-SAMPLE-SKU-UNIQUE-VALUE")
+	err := validator.ValidateLicenseForProduct("org-4xihABXKyq", "PRODUCT-SAMPLE-SKU-UNIQUE-VALUE")
 	if err != nil {
 		// Print error information in html format
 		fmt.Fprintf(w, "<h1>Error</h1><p>%s</p>", err.Error())
