@@ -2,7 +2,7 @@ version: '3.9'
 x-customer-integrations:
   licensing: 
     licenseExpirationInDays: 7
-    productTierSku: 'PRODUCT-SAMPLE-SKU-UNIQUE-VALUE'
+    productPlanUniqueIdentifier: 'PRODUCT-SAMPLE-SKU-UNIQUE-VALUE'
 
 x-omnistrate-load-balancer:
   https:
