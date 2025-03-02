@@ -14,6 +14,7 @@ This example project demonstrates how to use the Omnistrate Licensing SDK in a G
 The [main.go](/cmd/licensing-example-go/main.go) file is the entry point of the GoLang application. It demonstrates how to use the Omnistrate Licensing SDK to validate your mounted licenses. 
 
 This is the validation method that can be used to validate a license key for a product in Omnistrate. With a simple call to this method, you can:
+
 - confirm the validity of the certificate that signed the license
 - validate the license signature
 - validate the license expiration date
