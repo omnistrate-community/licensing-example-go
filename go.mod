@@ -1,6 +1,6 @@
 module github.com/omnistrate-community
 
-go 1.24
+go 1.25.3
 
 require github.com/omnistrate-oss/omnistrate-licensing-sdk-go v1.0.15
 
