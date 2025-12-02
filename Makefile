@@ -54,7 +54,7 @@ login:
 
 .PHONY: release
 release:
-	omnistrate-ctl build -f compose.yaml --name licensing-example --release-as-preferred
+	omnistrate-ctl build -f compose.yaml --product-name  licensing-example --release-as-preferred
 
 .PHONY: create
 create:
