@@ -60,8 +60,7 @@ release:
 
 .PHONY: create
 create:
-	omnistrate-ctl instance create --environment Dev --cloud-provider aws --region us-east-2 --plan ${SERVICE_PLAN} --service ${SERVICE_NAME} --resource web 
-
+	omnistrate-ctl instance create --environment Dev --cloud-provider aws --region ap-south-1 --plan ${SERVICE_PLAN} --service ${SERVICE_NAME} --resource web
 
 .PHONY: list
 list:
